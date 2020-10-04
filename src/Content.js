@@ -1,13 +1,19 @@
-import React from 'react'
-import Prof from './Prof'
+import React from "react";
+import Prof from "./Prof";
+
+const profs = [
+  { nom: "Vignaud", prenom: "Christophe" },
+  { nom: "Canu", prenom: "Fabien" },
+  { nom: "King", prenom: "Stephen" },
+];
 
 const Content = ({ text }) => (
   <div className="content">
     <p>{text}</p>
-    <Prof nom="Robert" prenom="Pirres" />
-    <Prof nom="Georges" prenom="Weha" />
-    <Prof nom="Gérard" prenom="Jirres" />
+    {profs.map((prof) => 
+      <Prof nom={prof.nom} prenom={prof.prenom} />
+    )}
   </div>
 );
 
-export default Content
+export default Content;
