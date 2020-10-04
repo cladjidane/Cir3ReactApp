@@ -1,5 +1,5 @@
 import React from "react";
-import Prof from "./Prof";
+import Liste from "./Liste";
 
 const profs = [
   { nom: "Vignaud", prenom: "Christophe" },
@@ -7,12 +7,17 @@ const profs = [
   { nom: "King", prenom: "Stephen" },
 ];
 
+const cours = [
+  { titre: "Symfony TP", descriptif: "..." },
+  { titre: "React TP", descriptif: "..." },
+  { titre: "JSX", descriptif: "..." }
+];
+
 const Content = ({ text }) => (
   <div className="content">
     <p>{text}</p>
-    {profs.map((prof) => 
-      <Prof nom={prof.nom} prenom={prof.prenom} />
-    )}
+    <Liste datas={profs} type="profs" />
+    <Liste datas={cours} type="cours" />
   </div>
 );
 
