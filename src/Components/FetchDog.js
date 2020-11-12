@@ -1,29 +1,34 @@
 import React from "react";
 
 const FetchDog = ({ text }) => {
-  const [hasError, setErrors] = React.useState(false);
-  const [dog, setDog] = React.useState({});
+  const [loadDog, setLoadDog] = React.useState(false);
+  const [dog, setDog] = React.useState();
 
   React.useEffect(() => {
-    fetch("https://dog.ceo/api/breeds/image/random")
-      .then((res) => res.json())
-      .then((res) => setDog(res))
-      .catch((err) => setErrors(err));
-  }, []);
+    if (loadDog) {
+      fetch("https://dog.ceo/api/breeds/image/random")
+        .then((res) => res.json())
+        .then((res) => setDog(res));
+    }
+  }, [loadDog]);
+
+  const handleLoad = () => {
+    setLoadDog(true);
+  };
+
+  const handleReload = () => {
+    setLoadDog(Math.random());
+  };
 
   return (
     <div>
       {dog ? (
         <div>
-          <p>
-            DOGS !<span>{JSON.stringify(dog)}</span>
-          </p>
           <img src={dog.message} />
-          <hr />
-          <span>Has error: {JSON.stringify(hasError)}</span>
+          <button onClick={() => handleReload()}>Relancer</button>
         </div>
       ) : (
-        <button>Lancer un appel API</button>
+        <button onClick={() => handleLoad()}>Lancer un appel API</button>
       )}
     </div>
   );
