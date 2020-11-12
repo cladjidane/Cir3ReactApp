@@ -3,7 +3,7 @@ import React from "react";
 
 const Aside = ({ text }) => (
   <aside className="aside">
-    <FetchDog />
+    {/*<FetchDog />*/}
   </aside>
 );
 

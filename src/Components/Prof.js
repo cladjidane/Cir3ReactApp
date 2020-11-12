@@ -1,4 +1,6 @@
 import React from "react";
+import Cours from "./Cours";
+
 
 const Prof = ({ nom, prenom, cours }) => {
   //PROF
@@ -42,14 +44,7 @@ const Prof = ({ nom, prenom, cours }) => {
       </h3>
       <ul>
         {cours &&
-          cours.map((cour) => {
-            return (
-              <li>
-                <h4>{cour.titre}</h4>
-                {cour.descriptif}
-              </li>
-            );
-          })}
+          cours.map((cour) => <Cours titre={cour.titre} descriptif={cour.descriptif} />)}
       </ul>
     </div>
   );
