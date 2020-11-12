@@ -1,8 +1,8 @@
-import React from "react";
 import Cours from "./Cours";
 import Prof from "./Prof";
+import React from "react";
 
-const Liste = ({ type, datas }) => (
+const List = ({ type, datas }) => (
   <div className="liste">
     {type === "profs" &&
       datas.map((prof) => <Prof nom={prof.nom} prenom={prof.prenom} />)
@@ -13,4 +13,4 @@ const Liste = ({ type, datas }) => (
   </div>
 );
 
-export default Liste;
+export default List;
