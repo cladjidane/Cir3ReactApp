@@ -13,10 +13,18 @@ const FetchDog = ({ text }) => {
 
   return (
     <div>
-      <p>DOGS !<span>{JSON.stringify(dog)}</span></p>
-      <img src={dog.message} />
-      <hr />
-      <span>Has error: {JSON.stringify(hasError)}</span>
+      {dog ? (
+        <div>
+          <p>
+            DOGS !<span>{JSON.stringify(dog)}</span>
+          </p>
+          <img src={dog.message} />
+          <hr />
+          <span>Has error: {JSON.stringify(hasError)}</span>
+        </div>
+      ) : (
+        <button>Lancer un appel API</button>
+      )}
     </div>
   );
 };
