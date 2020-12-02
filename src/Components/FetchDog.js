@@ -28,7 +28,7 @@ const FetchDog = ({ text }) => {
           <button onClick={() => handleReload()}>Relancer</button>
         </div>
       ) : (
-        <button onClick={() => handleLoad()}>Lancer un appel API</button>
+        <p><button onClick={() => handleLoad()}>Lancer un appel API</button></p>
       )}
     </div>
   );
