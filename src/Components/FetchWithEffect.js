@@ -7,7 +7,7 @@ const FetchWithEffect = ({ text }) => {
     setTimeout(() => {
       fetch("https://dog.ceo/api/breeds/image/random")
       .then((res) => res.json())
-      .then((res) => setDog(res));
+      .then((res) => { console.log(res); setDog(res)});
     }, 5000);
   }, []);
 

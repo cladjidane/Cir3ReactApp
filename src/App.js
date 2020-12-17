@@ -1,21 +1,28 @@
 import './App.css';
 
-import Aside from './Components/Aside'
+
 import Content from './Components/Content'
-import React from 'react';
+import Aside from './Components/Aside'
 import logo from './logo.svg';
 
+import React, { useContext, createContext } from "react";
+export const Context = createContext();
+
 function App() {
+  const name = "Paul";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <div className="Container">
-        <Content />
-        <Aside />
+    <Context.Provider value={{name}}>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        <div className="Container">
+          <Content />
+          <Aside />
+        </div>
       </div>
-    </div>
+    </Context.Provider>
   );
 }
 

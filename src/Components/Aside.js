@@ -1,14 +1,16 @@
 import Prof2 from "./Prof2";
-import React from "react";
+import FetchWithEffect from "./FetchWithEffect";
+import React, { useContext, createContext } from "react";
+
 
 
 
 const Aside = ({ text }) => {
-  const user = React.useContext(Context);
+  //const user = React.useContext(Context);
   
-  <aside className="aside">
-    <Prof2 nom={user.name} />
-  </aside>
+  return (<aside className="aside">
+    <FetchWithEffect />
+  </aside>)
 };
 
 export default Aside;
