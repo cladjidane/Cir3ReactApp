@@ -1,28 +1,46 @@
 import './App.css';
 
+// Thirds services
+import {
+  Link,
+  Route,
+  BrowserRouter as Router,
+  Switch
+} from "react-router-dom";
 
-import Content from './Components/Content'
 import Aside from './Components/Aside'
+import Content from './Components/Content'
+import ContentCours from './Components/ContentCours'
+import ContentProfs from './Components/ContentProfs'
+import React from 'react';
 import logo from './logo.svg';
 
-import React, { useContext, createContext } from "react";
-export const Context = createContext();
-
 function App() {
-  const name = "Paul";
 
   return (
-    <Context.Provider value={{name}}>
+    <Router>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/profs">Profs</Link></li>
+              <li><Link to="/cours">Cours</Link></li>
+            </ul>
+          </nav>
+
         </header>
         <div className="Container">
-          <Content />
+          <Switch>
+            <Route exact path="/"><Content /></Route>
+            <Route path="/profs"><ContentProfs /></Route>
+            <Route path="/cours"><ContentCours /></Route>
+          </Switch>
           <Aside />
         </div>
       </div>
-    </Context.Provider>
+    </Router>
   );
 }
 
