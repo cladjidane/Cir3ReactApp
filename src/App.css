@@ -33,6 +33,21 @@
   }
 }
 
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  display: inline-block;
+  padding: 0 10px;
+}
+
 .Container {
   display: flex;
   justify-content: space-between;
@@ -43,14 +58,36 @@ main {
   width: 66%;
 }
 
-main .prof a {
-  font-size: 10px;
+main .prof {
+  position: relative;
 }
 
-main .noticeEdit {
-  padding: 20px;
-  background: red;
+main .prof a {
+  font-size: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+main .cours .infosCours {
+  margin-top: 20px;
+  padding: 30px;
+  background: #eee;
+}
+
+main .cours .infosCours h3 {
+  margin-top: 0;
+}
+
+hr {
+  margin: 20px 0 50px 0;
+}
+
+pre {
+  padding: 30px;
+  background: black;
   color: white;
+  font-size: 16px;
 }
 
 aside {

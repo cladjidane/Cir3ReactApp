@@ -1,32 +1,25 @@
-import Profs from "./Profs";
 import React from "react";
-
-const profs = [
-  {
-    nom: "Vignaud",
-    prenom: "Christophe",
-    cours: [{ titre: "Symfony TP", descriptif: "lorem ipsum" }],
-  },
-  {
-    nom: "Canu",
-    prenom: "Fabien",
-    cours: [
-      { titre: "Symfony TP", descriptif: "lorem ipsum" },
-      { titre: "React TP", descriptif: "lorem ipsum" },
-      { titre: "JSX", descriptif: "lorem ipsum" },
-    ],
-  },
-  {
-    nom: "King",
-    prenom: "Stephen",
-    cours: [{ titre: "JSX", descriptif: "lorem ipsum" }],
-  },
-];
 
 const Content = () => (
   <main className="content">
-    <h1>Liste des profs</h1>
-    <Profs datas={profs} />
+    <h1>Bienvenue</h1>
+    <p> Pour ce cours nous allons utiliser 2 outils : React-Router-Dom et JSON Server.
+    </p>
+    <p>
+      <b>React-Router-Dom</b> qui va nous permettre de créer des "pages" (routeur)
+    </p>
+    <pre>
+      # Installation<br />
+    npm install react-router-dom
+    </pre>
+    <p>
+      <b>JSON-Server</b> pour simuler rapidement une API. dans notre cas, nous développerons plutôt cette API avec Symfony.
+    </p>
+
+    <pre>
+      # Installation<br />
+    npm install -g json-server
+    </pre>
   </main>
 );
 export default Content;
