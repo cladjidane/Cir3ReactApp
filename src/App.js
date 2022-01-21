@@ -10,7 +10,6 @@ import {
 
 import Aside from './Components/Aside'
 import Content from './Components/Content'
-import ContentCours from './Components/ContentCours'
 import ContentProfs from './Components/ContentProfs'
 import React from 'react';
 import logo from './logo.svg';
@@ -26,7 +25,6 @@ function App() {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/profs">Profs</Link></li>
-              <li><Link to="/cours">Cours</Link></li>
             </ul>
           </nav>
 
@@ -35,7 +33,6 @@ function App() {
           <Switch>
             <Route exact path="/"><Content /></Route>
             <Route path="/profs"><ContentProfs /></Route>
-            <Route path="/cours"><ContentCours /></Route>
           </Switch>
           <Aside />
         </div>

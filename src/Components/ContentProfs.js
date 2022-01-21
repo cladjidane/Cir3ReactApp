@@ -1,28 +1,23 @@
-import Prof from "./Prof";
-import React from "react";
+import ProfFetch from './ProfFetch'
+import React from 'react'
 
 const ContentProfs = () => {
-  const [profs, setDatas] = React.useState([])
+
+  const [loadDatas, setLoadDatas] = React.useState(null)
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/profs")
-      .then(response => response.json())
-      .then(result => setDatas(result))
-      .catch(error => console.log('error', error));
+    fetch('https://randomuser.me/api/?results=5')
+      .then((res) => res.json())
+      .then((res) => setLoadDatas(res.results))
   }, [])
 
   return (
-    <main className="content">
-      <h1>Liste des profs</h1>
-      <div className="liste-profs">
-        {profs.map((prof, i) => (
-          <div>
-            <Prof key={`k-${i}`} infosProf={prof} />
-            <hr />
-          </div>
-        ))}
-      </div>
-    </main>
+    <div className='liste-profs'>
+      {loadDatas && loadDatas.map((prof) => (
+        <ProfFetch infosProf={prof.name} />
+      ))}
+    </div>
   )
 }
-export default ContentProfs;
+
+export default ContentProfs
