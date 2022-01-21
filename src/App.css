@@ -55,7 +55,7 @@ nav ul li a {
 
 main {
   padding: 30px;
-  width: 66%;
+  width: 50%;
 }
 
 main .prof {
@@ -91,7 +91,7 @@ pre {
 }
 
 aside {
-  width: 33%;
+  width: 50%;
   padding: 30px;
   background: silver;
 }
