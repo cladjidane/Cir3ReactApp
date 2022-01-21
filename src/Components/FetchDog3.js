@@ -1,6 +1,6 @@
 import React from "react";
 
-const FetchDog = ({ text }) => {
+const FetchDog3 = () => {
   const [loadDog, setLoadDog] = React.useState(false);
   const [dog, setDog] = React.useState();
 
@@ -34,4 +34,4 @@ const FetchDog = ({ text }) => {
   );
 };
 
-export default FetchDog;
+export default FetchDog3;

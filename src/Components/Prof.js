@@ -1,36 +1,33 @@
-import React from "react";
-import Cours from "./Cours";
+import React from 'react'
+import Cours from './Cours'
 
-
-const Prof = ({ nom, prenom, cours }) => {
+const Prof = ({ nom, prenom, email }) => {
   //PROF
-  const [prof, setProf] = React.useState(nom + " " + prenom);
-  const [edit, setEdit] = React.useState(false);
+  const [prof, setProf] = React.useState(nom + ' ' + prenom)
+  const [edit, setEdit] = React.useState(false)
 
   const handleClick = () => {
-    setEdit(true);
-  };
+    setEdit(true)
+  }
 
   const handleChange = (value) => {
-    setProf(value);
-  };
+    setProf(value)
+  }
 
   const handleSubmit = () => {
-    setEdit(!edit);
-  };
+    setEdit(!edit)
+  }
 
   return (
-    <div className="prof">
-      {edit && 
-        <div className="noticeEdit">
-          Nous modifions actuellement : {prof}
-        </div> 
-      }
+    <div className='prof'>
+      {edit && (
+        <div className='noticeEdit'>Nous modifions actuellement : {prof}</div>
+      )}
       <h3>
         {edit ? (
           <div>
             <input
-              type="text"
+              type='text'
               value={prof}
               onChange={(e) => handleChange(e.target.value)}
             />
@@ -42,12 +39,9 @@ const Prof = ({ nom, prenom, cours }) => {
           </p>
         )}
       </h3>
-      <ul>
-        {cours &&
-          cours.map((cour) => <Cours titre={cour.titre} descriptif={cour.descriptif} />)}
-      </ul>
+      <div>{email && <p>{email}</p>}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Prof;
+export default Prof
