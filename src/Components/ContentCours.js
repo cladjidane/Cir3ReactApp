@@ -1,7 +1,7 @@
 import Cours from "./Cours";
 import React from "react";
 
-const ContentCours = ({datas}) => {
+const ContentCours = () => {
   const cours = []
   return (
     <main className="content">
