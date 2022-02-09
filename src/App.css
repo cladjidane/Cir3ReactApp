@@ -53,11 +53,22 @@ main .noticeEdit {
 }
 
 aside {
-  width: 33%;
+  width: 70%;
   padding: 30px;
   background: silver;
+
+  display: flex;
 }
 
 aside img {
   max-width: 100%;
+}
+
+.fetch-example {
+  width: 33%;
+  padding: 20px;
+}
+
+.fetch-example-desc {
+  min-height: 100px;
 }

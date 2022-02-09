@@ -10,7 +10,11 @@ const FetchDog1 = () => {
   }, [])
 
   return (
-    <div>
+    <div class='fetch-example'>
+      <div class='fetch-example-desc'>
+        <h3>Appel API mode 1</h3>
+        <p>Chargement de l'image par API au montage du composant (affichage) </p>
+      </div>
       {dog && (
         <div>
           <img src={dog.message} />

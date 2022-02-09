@@ -1,5 +1,4 @@
 import React from 'react'
-import Cours from './Cours'
 
 const Prof = ({ nom, prenom, email }) => {
   //PROF

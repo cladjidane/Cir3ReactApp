@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FetchDog2 = () => {
+const FetchDog4 = () => {
   const [loadDog, setLoadDog] = React.useState(false)
   const [dog, setDog] = React.useState()
 
@@ -10,26 +10,33 @@ const FetchDog2 = () => {
         .then((res) => res.json())
         .then((res) => setDog(res))
     }
-  }, [loadDog]) // <- tableau de dépendance, ici on passe la variable d'état loaddog
+  }, [loadDog])
 
   const handleLoad = () => {
-    setLoadDog(true)
+    // Petite simplification par rapport au mode ou l'on combiné les 2 fonctions
+    setLoadDog(Math.random())
   }
 
   return (
     <div class='fetch-example'>
       <div class='fetch-example-desc'>
-        <h3>Appel API mode 2</h3>
-        <p>Chargement de l'image par API au click sur le bouton grâce à une combinaison d'un useEffect (qui se déclenche lors de la modification de la variable d'état passé en dépendance - voir commentaire dans le code) et d'un useState (variable d'état)</p>
+        <h3>Appel API mode 4</h3>
+        <p>
+          Idem mode 3 mais simplifé un peu :)
+        </p>
       </div>
+
       {dog && (
         <div>
           <img src={dog.message} />
         </div>
       )}
-      <button onClick={() => handleLoad()}>Lancer un appel API</button>
+
+      <button onClick={() => handleLoad()}>
+        {!loadDog ? 'Lancer un appel API' : 'Relancer'}
+      </button>
     </div>
   )
 }
 
-export default FetchDog2
+export default FetchDog4
